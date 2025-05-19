@@ -61,6 +61,6 @@ public class _01_IntroToArrays {
 		System.out.println(largest);
 
 		// 12. print only the last element in the array
-		System.out.println(number[50]);
+		System.out.println(number[49]);
 	}
 }

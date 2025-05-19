@@ -4,15 +4,24 @@ public class _00_1D_Array_Methods {
 	// 1. Complete the method so that it returns the sum of all
 	// of the integers in the array being passed in
 	public static int sumIntArray(int[] values) {
-
-		return 0;
+		int number = 0;
+		for(int i=0; i<values.length; i++) {
+			number += values[i];
+		}
+		
+		return number;
 	}
 
 	// 2. Complete the method so that it returns the average of all
 	// of the integers in the array being passed in
 	public static double averageIntArray(int[] values) {
-
-		return 0;
+double number = 0;
+double num = 0;
+		for(int i=0; i<values.length; i++) {
+		number += values[i];
+		}
+		num = number/values.length;
+		return num;
 	}
 
 	// 3. Complete the method so that it returns true if the integer
@@ -20,6 +29,8 @@ public class _00_1D_Array_Methods {
 	// It should otherwise return false.
 	public static boolean containsIntValue(int[] array, int value) {
 
+		
+		
 		return false;
 	}
 
