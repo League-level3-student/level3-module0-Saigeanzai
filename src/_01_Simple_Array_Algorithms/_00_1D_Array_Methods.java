@@ -28,9 +28,11 @@ double num = 0;
 	// array contains the value specified by the second parameter.
 	// It should otherwise return false.
 	public static boolean containsIntValue(int[] array, int value) {
-
-		
-		
+for (int i=0; i<array.length; i++) {
+	if (array[i]==value) {
+		return true;
+	}
+}	
 		return false;
 	}
 
@@ -38,7 +40,16 @@ double num = 0;
 	// first instance that the specified value occurs in the array.
 	// If the array does not contain the specified value, it should return -1.
 	public static int getIndex(int[] arr, int value) {
-
-		return 0;
+for (int i=0; i<arr.length; i++) {
+	if (arr[i]==value) {
+		return i;
+	}
+}
+		
+		
+		
+		
+		
+		return -1;
 	}
 }
