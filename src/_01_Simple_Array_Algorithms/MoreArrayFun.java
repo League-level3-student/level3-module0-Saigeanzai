@@ -48,8 +48,10 @@ public class MoreArrayFun {
 	public static void methodFour(String[] strings) {
 		Random rand = new Random();
 		//rand.nextInt(4);
-		for (int i = rand.nextInt(4); i < strings.length; i++) {
-			System.out.println(strings[i]);
+		for (int i = strings.length-1; i >= 0; i--) {
+			int num = rand.nextInt(i+1);
+			System.out.println(strings[num]);
+			strings[num] = strings[i];
 		}
 	}
 	
