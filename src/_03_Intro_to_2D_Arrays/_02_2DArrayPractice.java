@@ -29,8 +29,8 @@ public class _02_2DArrayPractice {
 	 * 4, 5 6, 7, 8
 	 */
 	public Integer[][] test1() {
-
-		return null;
+		Integer[][] firstArray = { { 0, 1, 2 }, { 3, 4, 5 }, { 6, 7, 8 } };
+		return firstArray;
 	}
 
 	/*
@@ -38,8 +38,8 @@ public class _02_2DArrayPractice {
 	 * "c", "d", "e", "f", "g", "e"
 	 */
 	public String[][] test2() {
-
-		return null;
+		String[][] secondArray = { { "a", "b","c", "d" }, { "e", "f","g", "e" } };
+		return secondArray;
 	}
 
 	/*
@@ -47,8 +47,9 @@ public class _02_2DArrayPractice {
 	 * false, false, false, true, true, true, true, false
 	 */
 	public Boolean[][] test3() {
-
-		return null;
+		Boolean[][] thirdArray = { { true, false }, { false, false }, { false, true }, { true, true },
+				{ true, false } };
+		return thirdArray;
 	}
 
 	/*
@@ -57,7 +58,11 @@ public class _02_2DArrayPractice {
 	 * 
 	 * int[][] grid = new int[2][3];
 	 * 
-	 * 
+	 *      col0 col1 col2 col3
+	 *          \/ \/ \/ \/
+	 *  row 0 { 0, 1, 2, 10 } 
+	 *  row 1 { 3, 4, 5, 11 } 
+	 *  row 2 { 6, 7, 9, 12 }
 	 * 
 	 * Show your teacher the grid you created
 	 */
@@ -68,7 +73,12 @@ public class _02_2DArrayPractice {
 	 * 
 	 * Robot[][] robots = new Robot[4][2];
 	 * 
-	 * 
+	 *           col0 col1 col2
+	 *            \/ \/ \/ \/ 
+	 *  row 0 { rob1, rob2, rob3 } 
+	 *  row 1 { rob4,rob5, rob6 } 
+	 *  row 2 { rob7, rob8, rob9 } 
+	 *  row 3 { rob10, rob11, rob12}
 	 * 
 	 * Show your teacher the grid you created
 	 */
@@ -80,7 +90,7 @@ public class _02_2DArrayPractice {
 	public Object test4() {
 		Object[][] objects = { { null, null, null, null }, { null, null, null, new Object() } };
 
-		return null;
+		return objects[0];
 	}
 
 	/*
@@ -90,7 +100,7 @@ public class _02_2DArrayPractice {
 	public Object test5() {
 		Object[][] objects = { { null, null, new Object(), null }, { null, null, null, null } };
 
-		return null;
+		return objects[1];
 	}
 
 	/*
@@ -98,9 +108,14 @@ public class _02_2DArrayPractice {
 	 * 0)
 	 */
 	public Integer test6() {
+		int integerr = 0;
 		int[][] nums = { { 8, 7, 6, 5 }, { 4, 3 }, { 2, 1, 0 } };
-
-		return null;
+for(int i=0; i<nums.length; i++) {
+	for(int j=0; i<nums[i].length; j++) {
+		nums[0][i] += integerr;
+	}
+}
+		return integerr;
 	}
 
 	/*
@@ -108,8 +123,13 @@ public class _02_2DArrayPractice {
 	 * (column 0)
 	 */
 	public Integer test7() {
+		int integerr =0;
 		int[][] nums = { { 8, 7, 6, 5 }, { 4, 3 }, { 2, 1, 0 } };
-
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; i<nums[i].length; j++) {
+				nums[i][0] += integerr;
+			}
+		}
 		return null;
 	}
 
