@@ -90,7 +90,7 @@ public class _02_2DArrayPractice {
 	public Object test4() {
 		Object[][] objects = { { null, null, null, null }, { null, null, null, new Object() } };
 
-		return objects[0];
+		return objects[1][3];
 	}
 
 	/*
@@ -100,7 +100,7 @@ public class _02_2DArrayPractice {
 	public Object test5() {
 		Object[][] objects = { { null, null, new Object(), null }, { null, null, null, null } };
 
-		return objects[1];
+		return objects[0][2];
 	}
 
 	/*
@@ -130,15 +130,21 @@ for(int i=0; i<nums.length; i++) {
 				nums[i][0] += integerr;
 			}
 		}
-		return null;
+		return integerr;
 	}
 
 	/*
 	 * Write an algorithm to return the sum of all the numbers in the specified row
 	 */
 	public Integer getSumByRow(int[][] matrix, int row) {
-
-		return null;
+		int integerr =0;
+		int[][] nums = { { 8, 7, 6, 5 }, { 4, 3 }, { 2, 1, 0 } };
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; i<nums[i].length; j++) {
+				nums[row][i] += integerr;
+			}
+		}
+		return integerr;
 	}
 
 	/*
@@ -146,8 +152,14 @@ for(int i=0; i<nums.length; i++) {
 	 * column
 	 */
 	public Integer getSumByColumn(int[][] matrix, int col) {
-
-		return null;
+		int integerr =0;
+		int[][] nums = { { 8, 7, 6, 5 }, { 4, 3 }, { 2, 1, 0 } };
+		for(int i=0; i<nums.length; i++) {
+			for(int j=col; i<nums[i].length; j++) {
+				nums[i][col] += integerr;
+			}
+		}
+		return integerr;
 	}
 
 	/*
@@ -165,7 +177,14 @@ for(int i=0; i<nums.length; i++) {
 	 * null.
 	 */
 	public Integer getEastNeighbor(int[][] matrix, int row, int col) {
-
+		int[][] nums = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; i<nums[i].length; j++) {
+			if (j==nums[row][col]) {
+				return nums[row][col];
+			}
+			}
+		}
 		return null;
 	}
 
