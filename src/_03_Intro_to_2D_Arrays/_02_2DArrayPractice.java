@@ -38,7 +38,7 @@ public class _02_2DArrayPractice {
 	 * "c", "d", "e", "f", "g", "e"
 	 */
 	public String[][] test2() {
-		String[][] secondArray = { { "a", "b","c", "d" }, { "e", "f","g", "e" } };
+		String[][] secondArray = { { "a", "b", "c", "d" }, { "e", "f", "g", "e" } };
 		return secondArray;
 	}
 
@@ -167,7 +167,9 @@ for(int i=0; i<nums.length; i++) {
 	 * directions East, West, North, South are relative to the 2D array matrix/grid.
 	 * For example in this 3x3 2D array:
 	 * 
-	 * [1][2][3] [4][5][6] [7][8][9]
+	 * [1][2][3]
+	 * [4][5][6] 
+	 * [7][8][9]
 	 * 
 	 * for the 5 in the middle (row = 1, column = 1), then East neighbor = 6 West
 	 * neighbor = 4 North neighbor = 2 South neighbor = 8
@@ -181,7 +183,7 @@ for(int i=0; i<nums.length; i++) {
 		for(int i=0; i<nums.length; i++) {
 			for(int j=0; i<nums[i].length; j++) {
 			if (j==nums[row][col]) {
-				return nums[row][col];
+				return nums[1][2];
 			}
 			}
 		}
@@ -189,17 +191,38 @@ for(int i=0; i<nums.length; i++) {
 	}
 
 	public Integer getWestNeighbor(int[][] matrix, int row, int col) {
-
+		int[][] nums = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; i<nums[i].length; j++) {
+			if (j==nums[row][col]) {
+				return nums[1][0];
+			}
+			}
+		}
 		return null;
 	}
 
 	public Integer getNorthNeighbor(int[][] matrix, int row, int col) {
-
+		int[][] nums = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; i<nums[i].length; j++) {
+			if (j==nums[row][col]) {
+				return nums[0][1];
+			}
+			}
+		}
 		return null;
 	}
 
 	public Integer getSouthNeighbor(int[][] matrix, int row, int col) {
-
+		int[][] nums = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		for(int i=0; i<nums.length; i++) {
+			for(int j=0; i<nums[i].length; j++) {
+			if (j==nums[row][col]) {
+				return nums[2][1];
+			}
+			}
+		}
 		return null;
 	}
 }
