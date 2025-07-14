@@ -109,11 +109,13 @@ public class _02_2DArrayPractice {
 	 */
 	public Integer test6() {
 		int integerr = 0;
+		int intt = 1;
 		int[][] nums = { { 8, 7, 6, 5 }, { 4, 3 }, { 2, 1, 0 } };
 for(int i=0; i<nums.length; i++) {
-	for(int j=0; i<nums[i].length; j++) {
+	for(int j=0; j<nums[i].length; j++) {
 		nums[0][i] += integerr;
 	}
+	System.out.println(integerr);
 }
 		return integerr;
 	}
