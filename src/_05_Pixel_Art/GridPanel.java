@@ -53,12 +53,18 @@ for(int i=0; i<pixxel.length; i++) {
 	public void clickPixel(int mouseX, int mouseY) {
 		// 5. Use the mouseX and mouseY variables to change the color
 		// of the pixel that was clicked. *HINT* Use the pixel's dimensions.
-		//pixxel[mouseX/pixelWidth][mouseY/pixelHeight] = setColor(color);
+		pixxel[mouseX/pixelWidth][mouseY/pixelHeight].color = this.color;
 	}
 
 	@Override
 	public void paintComponent(Graphics g) {
 		// 4. Iterate through the array.
+		for(int i=0; i<pixxel.length; i++) {
+			for(int j=0; j<pixxel[i].length; i++) {
+				
+				
+			}
+		}
 		// For every pixel in the list, fill in a rectangle using the pixel's color.
 		// Then, use drawRect to add a grid pattern to your display.
 
