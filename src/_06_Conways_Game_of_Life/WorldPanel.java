@@ -46,10 +46,10 @@ for (int i =0; i<cellSize; i++) {
 	public void randomizeCells() {
 		// 4. Iterate through each cell and randomly set each
 		// cell's isAlive memeber to true or false
-		
+		Random rand = new Random();
 for (int i =0; i<cellSize; i++) {
 	for (int j =0; j<cells[i].length; j++) {
-		
+		cells[i][j].isAlive = rand.nextBoolean();;
 	}
 }
 		repaint();
@@ -57,7 +57,12 @@ for (int i =0; i<cellSize; i++) {
 
 	public void clearCells() {
 		// 5. Iterate through the cells and set them all to dead.
-
+for (int i=0; i<cellSize; i++) {
+	for (int j=0; j<cells[i].length; j++) {
+		cells[i][j].isAlive = false;
+	}
+}
+		
 		repaint();
 	}
 
@@ -76,8 +81,13 @@ for (int i =0; i<cellSize; i++) {
 	@Override
 	public void paintComponent(Graphics g) {
 		// 6. Iterate through the cells and draw them all
-
+for (int i =0; i<cellSize; i++) {
+	for (int j=0; j<cells[i].length; j++) {
+		
+	}
+}
 		// Draw the perimeter of the grid
+setSize(300,300);
 		g.setColor(Color.BLACK);
 		g.drawRect(0, 0, getWidth() - 1, getHeight() - 1);
 	}
@@ -87,6 +97,16 @@ for (int i =0; i<cellSize; i++) {
 		// 7. iterate through cells and fill in the livingNeighbors array
 		// using the getLivingNeighbors method.
 		int[][] livingNeighbors = new int[cellsPerRow][cellsPerRow];
+		
+		for (int i=0; i<cellSize; i++) {
+			for (int j=0; j<cells[i].length; j++) {
+				livingNeighbors[i][j] = getLivingNeighbors(cells, livingNeighbors[i][0], livingNeighbors[j][0]);
+				
+				
+			}
+		}
+		
+	
 
 		// 8. check if each cell should live or die
 
@@ -163,6 +183,12 @@ for (int i =0; i<cellSize; i++) {
 		// have to determine the cell that was clicked from the pixel
 		// location and toggle the 'isAlive' variable for that cell.
 
+		int x = e.getX();
+		int y = e.getY();
+		
+			
+		
+		
 		repaint();
 	}
 
