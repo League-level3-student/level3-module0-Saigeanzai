@@ -102,13 +102,18 @@ setSize(300,300);
 			for (int j=0; j<cells[i].length; j++) {
 				livingNeighbors[i][j] = getLivingNeighbors(cells, livingNeighbors[i][0], livingNeighbors[j][0]);
 				
-				
 			}
 		}
 		
 	
-
 		// 8. check if each cell should live or die
+		
+		for (int i=0; i<cellSize; i++) {
+			for (int j=0; j<cells[i].length; j++) {
+				cells[i][j].liveOrDie(livingNeighbors[i][j]);
+				
+			}
+		}
 
 		repaint();
 	}
@@ -186,7 +191,7 @@ setSize(300,300);
 		int x = e.getX();
 		int y = e.getY();
 		
-			
+		
 		
 		
 		repaint();
