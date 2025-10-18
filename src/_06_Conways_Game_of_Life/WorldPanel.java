@@ -30,15 +30,16 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		this.cellsPerRow = cpr;
 
 		// 2. Calculate the cell size.
+		cellSize = w/cpr;
 
 		// 3a. Initialize the cell array to the appropriate size.
-		cells = new Cell[50][50];
+		cells = new Cell[cpr][cpr];
 		// 3b. Iterate through the array and initialize each cell.
 		// Don't forget to consider the cell's dimensions when
 		// passing in the location.
-		for (int i = 0; i < cellSize; i++) {
+		for (int i = 0; i < cells.length; i++) {
 			for (int j = 0; j < cells[i].length; j++) {
-				cells[i][j] = new Cell(i, j, cellSize);
+				cells[i][j] = new Cell(i*cellSize, j*cellSize, cellSize);
 			}
 		}
 	}
@@ -50,7 +51,7 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		for (int i = 0; i < cells.length; i++) {
 			for (int j = 0; j < cells[i].length; j++) {
 				cells[i][j].isAlive = rand.nextBoolean();
-				;
+				
 			}
 		}
 		repaint();
@@ -84,7 +85,8 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// 6. Iterate through the cells and draw them all
 		for (int i = 0; i < cells.length; i++) {
 			for (int j = 0; j < cells[i].length; j++) {
-
+				System.out.println(cells[i][j]);
+				cells[i][j].draw(g);
 			}
 		}
 		// Draw the perimeter of the grid
@@ -189,7 +191,9 @@ public class WorldPanel extends JPanel implements MouseListener, ActionListener 
 		// location and toggle the 'isAlive' variable for that cell.
 
 		int x = e.getX();
-		int y = e.getY();
+		int y = e.getY(); 
+		cells[(int) x/cellSize][(int) y/cellSize].isAlive = !cells[(int) x/cellSize][(int) y/cellSize].isAlive;
+		
 		
 
 		repaint();
