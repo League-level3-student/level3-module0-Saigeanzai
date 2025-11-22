@@ -49,6 +49,7 @@
 package _07_The_Wrong_Way_Cow;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class TheWrongWayCow {
 
@@ -56,55 +57,64 @@ public class TheWrongWayCow {
 		// Fill in the code to return the [col, row] coordinate position of the
 		// head (letter 'c') of the wrong way cow!
 
-		int up = 0;
-		int down = 0;
-		int right = 0;
-		int left = 0;
-		
-		
-		for(int i=0; i<field.length; i++) {
-			for(int j=0; j<field[0].length; j++) {
-				if (getCowDirection(i,j, field)==0) {
-					up+=1;
+		ArrayList<int[]> upLocations = new ArrayList<int[]>();
+		ArrayList<int[]> downLocations = new ArrayList<int[]>();
+		ArrayList<int[]> rightLocations = new ArrayList<int[]>();
+		ArrayList<int[]> leftLocations = new ArrayList<int[]>();
+
+		for (int i = 0; i < field.length -2; i++) {
+			for (int j = 0; j < field[i].length -2; j++) {
+				if (getCowDirection(i, j, field) == 0) {
+					
+					upLocations.add(new int[] {i,j});
 				}
-				if(getCowDirection(i,j, field)==1) {
-					right+=1;
+				if (getCowDirection(i, j, field) == 1) {
+					rightLocations.add(new int[] {i,j});
 				}
-				if(getCowDirection(i,j, field)==2) {
-					down+=1;
+				if (getCowDirection(i, j, field) == 2) {
+					downLocations.add(new int[] {i,j});
 				}
-				if(getCowDirection(i,j, field)==3) {
-					left+=1;
+				if (getCowDirection(i, j, field) == 3) {
+					leftLocations.add(new int[] {i,j});
 				}
-				
-				if (up==1) {
-			
-				}
-				
-				}
+
 			}
-		
-		
-		
+		}
+		System.out.println("up:" + upLocations.size());
+		System.out.println("down:" + downLocations.size());
+		System.out.println("left:" + leftLocations.size());
+		System.out.println("right:" + rightLocations.size());
+		if (upLocations.size() == 1) {
+			return upLocations.get(0);
+		}
+		if (rightLocations.size() == 1) {
+			return rightLocations.get(0);
+		}
+		if (downLocations.size() == 1) {
+			return downLocations.get(0);
+		}
+		if (leftLocations.size() == 1) {
+			return leftLocations.get(0);
+		}
+
 		return null;
 	}
-	
+
 	static int getCowDirection(int x, int y, final char[][] field) {
-		
-		
-		if (field[x][y]=='c'&&field[x][y+1]=='o'&&field[x][y+2]=='w') {
+
+		if (field[x][y] == 'c' && field[x+1][y] == 'o' && field[x+2][y] == 'w') {
 			return 2;
 		}
-		
-		if (field[x][y]=='c'&&field[x+1][y]=='o'&&field[x+2][y]=='w') {
+
+		if (field[x][y] == 'c' && field[x][y+1] == 'o' && field[x][y+2] == 'w') {
 			return 1;
 		}
-		
-		if (field[x][y+2]=='c'&&field[x][y+1]=='o'&&field[x][y]=='w') {
+
+		if (field[x+2][y] == 'c' && field[x+1][y] == 'o' && field[x][y] == 'w') {
 			return 0;
 		}
-		
-		if (field[x+2][y]=='c'&&field[x+1][y]=='o'&&field[x][y]=='w') {
+
+		if (field[x][y+2] == 'c' && field[x][y+1] == 'o' && field[x][y] == 'w') {
 			return 3;
 		}
 		return -1;
