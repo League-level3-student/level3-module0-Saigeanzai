@@ -62,19 +62,19 @@ public class TheWrongWayCow {
 		ArrayList<int[]> rightLocations = new ArrayList<int[]>();
 		ArrayList<int[]> leftLocations = new ArrayList<int[]>();
 
-		for (int i = 0; i < field.length -2; i++) {
-			for (int j = 0; j < field[i].length -2; j++) {
-				if (getCowDirection(i, j, field) == 0) {
-					
+		for (int i = 0; i < field.length; i++) {
+			for (int j = 0; j < field[i].length; j++) {
+				int direction = getCowDirection(i,j,field);
+				if (direction == 0) {
 					upLocations.add(new int[] {i,j});
 				}
-				if (getCowDirection(i, j, field) == 1) {
+				if (direction == 1) {
 					rightLocations.add(new int[] {i,j});
 				}
-				if (getCowDirection(i, j, field) == 2) {
+				if (direction == 2) {
 					downLocations.add(new int[] {i,j});
 				}
-				if (getCowDirection(i, j, field) == 3) {
+				if (direction == 3) {
 					leftLocations.add(new int[] {i,j});
 				}
 
@@ -99,24 +99,30 @@ public class TheWrongWayCow {
 
 		return null;
 	}
-
+//2103
 	static int getCowDirection(int x, int y, final char[][] field) {
-
-		if (field[x][y] == 'c' && field[x+1][y] == 'o' && field[x+2][y] == 'w') {
-			return 2;
-		}
-
+try {
 		if (field[x][y] == 'c' && field[x][y+1] == 'o' && field[x][y+2] == 'w') {
 			return 1;
+		}
+		if (field[x][y+2] == 'c' && field[x][y+1] == 'o' && field[x][y] == 'w') {
+			return 3;
+		}
+} catch (ArrayIndexOutOfBoundsException e) {
+	System.out.println("no");
+}
+try {	
+if (field[x][y] == 'c' && field[x+1][y] == 'o' && field[x+2][y] == 'w') {
+			return 2;
 		}
 
 		if (field[x+2][y] == 'c' && field[x+1][y] == 'o' && field[x][y] == 'w') {
 			return 0;
 		}
-
-		if (field[x][y+2] == 'c' && field[x][y+1] == 'o' && field[x][y] == 'w') {
-			return 3;
-		}
+} catch (ArrayIndexOutOfBoundsException e) {
+	System.out.println("no");
+}
+		
 		return -1;
 	}
 }
