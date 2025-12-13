@@ -117,6 +117,7 @@ public class TheWrongWayCowTest {
 				"cccccccccccccccccccccccccccccc".toCharArray(), "oooooooooooooooooooooooooooooo".toCharArray(),
 				"wwwwwwwwwwwwwwwwwwwwwwwwwwwwww".toCharArray(), "cccccccccccccccccccccccccccccc".toCharArray(),
 				"oooooooooooooooooooooooooooooo".toCharArray(), "wwwwwwwwwwwwwwwwwwwwwwwwwwwwww".toCharArray() };
+				System.out.println("Supposed to be 14,8, but is: " + TheWrongWayCow.findWrongWayCow(show(field))[0] + ", " + TheWrongWayCow.findWrongWayCow(show(field))[1]);
 		assertArrayEquals(new int[] { 14, 8 }, TheWrongWayCow.findWrongWayCow(show(field)));
 	}
 

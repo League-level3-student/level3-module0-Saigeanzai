@@ -66,16 +66,16 @@ public class TheWrongWayCow {
 			for (int j = 0; j < field[i].length; j++) {
 				int direction = getCowDirection(i,j,field);
 				if (direction == 0) {
-					upLocations.add(new int[] {i,j});
+					upLocations.add(new int[] {j,i+2});
 				}
 				if (direction == 1) {
-					rightLocations.add(new int[] {i,j});
+					rightLocations.add(new int[] {j,i});
 				}
 				if (direction == 2) {
-					downLocations.add(new int[] {i,j});
+					downLocations.add(new int[] {j,i});
 				}
 				if (direction == 3) {
-					leftLocations.add(new int[] {i,j});
+					leftLocations.add(new int[] {j+2,i});
 				}
 
 			}
@@ -109,7 +109,7 @@ try {
 			return 3;
 		}
 } catch (ArrayIndexOutOfBoundsException e) {
-	System.out.println("no");
+	//System.out.println("no");
 }
 try {	
 if (field[x][y] == 'c' && field[x+1][y] == 'o' && field[x+2][y] == 'w') {
@@ -120,7 +120,7 @@ if (field[x][y] == 'c' && field[x+1][y] == 'o' && field[x+2][y] == 'w') {
 			return 0;
 		}
 } catch (ArrayIndexOutOfBoundsException e) {
-	System.out.println("no");
+	//System.out.println("no");
 }
 		
 		return -1;
